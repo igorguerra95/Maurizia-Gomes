@@ -1,0 +1,97 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "Cormorant Garamond", Georgia, serif;
+  --font-sans: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  
+  --color-quartz-50: #fdf2f8;
+  --color-quartz-100: #fce7f3;
+  --color-quartz-200: #fbcfe8;
+  --color-quartz-300: #f9a8d4;
+  --color-quartz-400: #f472b6;
+  --color-quartz-500: #ec4899;
+  --color-quartz-600: #db2777;
+  --color-quartz-700: #be185d;
+  --color-quartz-800: #9d174d;
+  --color-quartz-900: #831843;
+
+  --color-leaf-50: #f0fdf4;
+  --color-leaf-100: #dcfce7;
+  --color-leaf-200: #bbf7d0;
+  --color-leaf-300: #86efac;
+  --color-leaf-400: #4ade80;
+  --color-leaf-500: #22c55e;
+  --color-leaf-600: #16a34a;
+  --color-leaf-700: #15803d;
+  --color-leaf-800: #166534;
+  --color-leaf-900: #14532d;
+
+  --color-sand-50: #fdfbf7;
+  --color-sand-100: #f9f5ee;
+  --color-sand-200: #f2ece0;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+  }
+  
+  body {
+    min-height: 100vh;
+    background-color: #fdfbf7;
+    color: #1e293b;
+    font-family: "Lato", sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: "Cormorant Garamond", Georgia, serif;
+    letter-spacing: -0.025em;
+  }
+}
+
+/* Utilitários finos de design editorial de alta conversão */
+.font-display {
+  font-family: "Cormorant Garamond", Georgia, serif;
+}
+
+.font-body {
+  font-family: "Lato", sans-serif;
+}
+
+.hairline-border {
+  border: 1px solid rgba(244, 114, 182, 0.16);
+}
+
+.hairline-leaf {
+  border: 1px solid rgba(22, 163, 74, 0.16);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.organic-gradient {
+  background: radial-gradient(circle at 10% 20%, rgba(244, 114, 182, 0.12) 0%, transparent 45%),
+              radial-gradient(circle at 90% 80%, rgba(22, 163, 74, 0.10) 0%, transparent 45%),
+              #fdfbf7;
+}
+
+/* Suporte a animação sutil de pulso */
+@keyframes softPulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.35);
+  }
+  50% {
+    transform: scale(1.04);
+    box-shadow: 0 0 0 14px rgba(22, 163, 74, 0);
+  }
+}
+
+.animate-soft-pulse {
+  animation: softPulse 2.8s infinite ease-in-out;
+}
